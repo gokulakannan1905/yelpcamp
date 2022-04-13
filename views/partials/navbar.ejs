@@ -8,7 +8,16 @@
         <div class="navbar-nav">
           <a class="nav-link" href="/">Home</a>
           <a class="nav-link" href="/campgrounds">Campgrounds</a>
-          <a class="nav-link" href="/campgrounds/new">New Campground</a>
+          <a class="nav-link" href="/campgrounds/new">New Campground</a>          
+        </div>
+        <div class="navbar-nav ms-auto">
+          <% if(!currentUser) {%>
+          <a class="nav-link" href="/register">Sign up</a>
+          <a class="nav-link" href="/login">Login</a>
+          <% }else {%>
+            <a href="#" class="nav-link"><%= currentUser.username %> </a>
+          <a class="nav-link" href="/logout">Logout</a>
+          <% } %> 
         </div>
       </div>
     </div>
